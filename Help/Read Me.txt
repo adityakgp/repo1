@@ -1,0 +1,13 @@
+_____________________________________________________
+
+Please install font(s) before opening presentation
+_____________________________________________________
+
+The presentation uses standard font Calibri.
+https://www.fonts.com/font/microsoft-corporation/calibri?QueryFontType=Web&src=GoogleWebFonts
+
+And Tempus Sans ITC
+https://fontsgeek.com/fonts/Tempus-Sans-ITC-Regular
+
+In case of any questions or difficulties please visit
+https://support.poweredtemplate.com
