@@ -12,31 +12,34 @@
 		/* padding-left: 20%; */
 		display: flex;
 		justify-content: center;
+		position: relative;
 		padding-top: 3.5%;
 	}
-	.im2{
-  max-width: 1000px;
-  max-height: 500px;
-  position: relative;
-  margin: auto;
-}
+
+	.im2 {
+		max-width: 1000px;
+		max-height: 500px;
+		position: relative;
+		margin: auto;
+	}
 
 
 	#navbar {
-		
+
 		border-radius: 20px;
 		border-color: black;
 		border: solid;
 		display: flex;
 		align-items: center;
-	
+
 		height: 200px;
-	
+
 		position: relative;
 	}
+
 	#navbar ul {
 		display: flex;
-		
+padding-top: 120px;
 	}
 
 	#navbar ul li {
@@ -45,7 +48,7 @@
 	}
 
 	#navbar ul li a {
-	
+
 		color: whitesmoke;
 		display: block;
 		padding: 13px 50px;
@@ -54,59 +57,61 @@
 	}
 
 	#navbar ul li a:hover {
-		 color: rgb(85, 85, 85); 
-		 background-color: white; 
+		color: rgb(85, 85, 85);
+		background-color: white;
 		cursor: pointer;
 	}
-	#navbar::before{
-    content: "";
-    background: url('download.jfif') no-repeat center center/cover;
-    background-color: rgb(85, 85, 85);
-    position: absolute;
-    top:0px;
-    left:0px;
-    height: 100%;
-    width:100%;
-    z-index: -1;
-    opacity: 1;
-}
-footer{
-	display: flex;
-	justify-content: center;
-}
-.header{
-	display: flex;
-	justify-content: center;
-}
- /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: whitesmoke;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.prev{
-  left:  0;
-  border-radius: 3px 0 0 3px;
-}
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-} 
+	#navbar::before {
+		content: "";
+		background: url('download.jfif') no-repeat center center/cover;
+		background-color: rgb(85, 85, 85);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		opacity: 1;
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
+	}
+
+	.header {
+		display: flex;
+		justify-content: center;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		margin-top: -22px;
+		padding: 16px;
+		color: whitesmoke;
+		font-weight: bold;
+		font-size: 25px;
+		border-radius: 0 3px 3px 0;
+	}
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	.prev {
+		left: 0;
+		border-radius: 3px 0 0 3px;
+	}
+	.prev:hover,
+	.next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
 </style>
 
 <body>
@@ -121,59 +126,64 @@ footer{
 			</ul>
 		</nav>
 	</header>
-	<div><h1 class="header">Slide Show</h1></div>
+	<div>
+		<h1 class="header">Slide Show</h1>
+	</div>
 	<div class="im"><img name="slide" width="1000px" height="500px" /></div>
 	<br><br><br><br><br><br><br><br><br><br>
 	<div class="im2"><img name="slide2" width="1000px" height="500px" />
 		<a class="prev" onclick="changeSlides(-1)">&#10094;</a>
 		<a class="next" onclick="changeSlides(1)">&#10095;</a>
 	</div>
-<!-- <div></div> -->
-	<footer class="foot"><div><a href="https://github.com/adityakgp"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="" height="50px" width="50px"></a></div></footer>
+	<!-- <div></div> -->
+	<footer class="foot">
+		<div><a href="https://github.com/adityakgp"><img src="https://image.flaticon.com/icons/png/512/25/25231.png"
+					alt="" height="50px" width="50px"></a></div>
+	</footer>
 	<script>
-		var i = 0; 			
+		var i = 0;
 		var images = [];
-		var time = 2000;	
+		var time = 2000;
 
 
-		
+
 		images = ["https://c4.wallpaperflare.com/wallpaper/642/695/642/anime-demon-slayer-kimetsu-no-yaiba-giyuu-tomioka-hd-wallpaper-preview.jpg", "download.jfif", "charmy.jpg", "1-10.jpg"];
-		
+
 		var n = images.length;
 
 		// Change Image
 		function changeImg() {
 			document.slide.src = images[i];
-			
+
 
 			if (i < n - 1) {
-			
+
 				i++;
 			} else {
-				
+
 				i = 0;
 			}
 
-		
+
 			setTimeout("changeImg()", time);
 		}
 
-		
+
 		window.onload = changeImg;
 
 		var j = 1;
-showSlides(n);
-function changeSlides(n) {
-  showSlides(j += n);
-}
-function showSlides(n) {
-document.slide2.src = images[i];
-  if (n > images.length) {j = 1}
-  if (n < 1) {j = images.length}
-  for (i = 0; i < images.length; i++) {
-      images[i].style.display = "none";
-  }
-}
+		showSlides(n);
+		function changeSlides(n) {
+			showSlides(j += n);
+		}
+		function showSlides(n) {
+			document.slide2.src = images[i];
+			if (n > images.length) { j = 1 }
+			if (n < 1) { j = images.length }
+			for (i = 0; i < images.length; i++) {
+				images[i].style.display = "block";
+			}
+		}
 
 
 
