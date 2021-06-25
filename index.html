@@ -9,7 +9,6 @@
 </head>
 <style>
 	.im {
-		/* padding-left: 20%; */
 		display: flex;
 		justify-content: center;
 		position: relative;
@@ -39,7 +38,7 @@
 
 	#navbar ul {
 		display: flex;
-padding-top: 120px;
+		padding-top: 120px;
 	}
 
 	#navbar ul li {
@@ -99,6 +98,7 @@ padding-top: 120px;
 		font-size: 25px;
 		border-radius: 0 3px 3px 0;
 	}
+
 	.next {
 		right: 0;
 		border-radius: 3px 0 0 3px;
@@ -108,6 +108,7 @@ padding-top: 120px;
 		left: 0;
 		border-radius: 3px 0 0 3px;
 	}
+
 	.prev:hover,
 	.next:hover {
 		background-color: rgba(0, 0, 0, 0.8);
@@ -135,7 +136,6 @@ padding-top: 120px;
 		<a class="prev" onclick="changeSlides(-1)">&#10094;</a>
 		<a class="next" onclick="changeSlides(1)">&#10095;</a>
 	</div>
-	<!-- <div></div> -->
 	<footer class="foot">
 		<div><a href="https://github.com/adityakgp"><img src="https://image.flaticon.com/icons/png/512/25/25231.png"
 					alt="" height="50px" width="50px"></a></div>
@@ -144,33 +144,18 @@ padding-top: 120px;
 		var i = 0;
 		var images = [];
 		var time = 2000;
-
-
-
 		images = ["https://c4.wallpaperflare.com/wallpaper/642/695/642/anime-demon-slayer-kimetsu-no-yaiba-giyuu-tomioka-hd-wallpaper-preview.jpg", "download.jfif", "charmy.jpg", "1-10.jpg"];
-
 		var n = images.length;
-
-		// Change Image
 		function changeImg() {
 			document.slide.src = images[i];
-
-
 			if (i < n - 1) {
-
 				i++;
 			} else {
-
 				i = 0;
 			}
-
-
 			setTimeout("changeImg()", time);
 		}
-
-
 		window.onload = changeImg;
-
 		var j = 1;
 		showSlides(n);
 		function changeSlides(n) {
@@ -184,9 +169,6 @@ padding-top: 120px;
 				images[i].style.display = "block";
 			}
 		}
-
-
-
 	</script>
 </body>
 
