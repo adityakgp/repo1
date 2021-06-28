@@ -8,21 +8,12 @@
 	<title>Document</title>
 </head>
 <style>
-	.im {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		padding-top: 3.5%;
-	}
-
-	.im2 {
+	.im,.im2 {
 		max-width: 1000px;
 		max-height: 500px;
 		position: relative;
 		margin: auto;
 	}
-
-
 	#navbar {
 
 		border-radius: 20px;
@@ -142,13 +133,12 @@
 	</footer>
 	<script>
 		var i = 0;
-		var images = [];
-		var time = 2000;
-		images = ["https://c4.wallpaperflare.com/wallpaper/642/695/642/anime-demon-slayer-kimetsu-no-yaiba-giyuu-tomioka-hd-wallpaper-preview.jpg", "download.jfif", "charmy.jpg", "1-10.jpg"];
-		var n = images.length;
+		var images = ["691072.png","705086.png","728013.jpg","819837.png"];
+		var time = 1000;
+		var l = images.length;
 		function changeImg() {
 			document.slide.src = images[i];
-			if (i < n - 1) {
+			if (i < l - 1) {
 				i++;
 			} else {
 				i = 0;
@@ -157,17 +147,17 @@
 		}
 		window.onload = changeImg;
 		var j = 1;
-		showSlides(n);
+		var n;
+		showSlides(j);
 		function changeSlides(n) {
 			showSlides(j += n);
 		}
-		function showSlides(n) {
+		function showSlides(n){
+			if (n > l) { j = 1; }
+		 	if (n < 1) { j = l; }
+			 i=j-1;
 			document.slide2.src = images[i];
-			if (n > images.length) { j = 1 }
-			if (n < 1) { j = images.length }
-			for (i = 0; i < images.length; i++) {
-				images[i].style.display = "block";
-			}
+			images[i].style.display="none";
 		}
 	</script>
 </body>
